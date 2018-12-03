@@ -4,12 +4,556 @@
     <meta charset="utf-8">
     <title>Omasivu</title>
     <style>
+    img{
+      margin: 50px;
+    }
+    .EUlippu {
+      border-style: solid;
+      border-color: red;
+      border-width: 5px;
+      background-image: url('EU/EU.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-left: 20px;
+      padding-bottom: 75px;
+    }
+    .CISlippu {
+      border-style: solid;
+      border-color: green;
+      border-width: 5px;
+      background-image: url('CIS/CIS.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-left: 20px;
+    }
+    .Americaslippu{
+      border-style: solid;
+      border-color: yellow;
+      border-width: 5px;
+      background-image: url('Americas/NA.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-left: 20px;
+    }
+    .Asialippu{
+      border-style: solid;
+      border-color: black;
+      border-width: 5px;
+      background-image: url('Asia/Korea.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-left: 20px;
+    }
+
     </style>
     <script>
+    function EUborder(x){
+      x.style.outline = '5px solid red';
+    }
+    function CISborder(x){
+      x.style.outline = '5px solid green';
+    }
+    function Americasborder(x){
+      x.style.outline = '5px solid yellow';
+    }
+    function Asiaborder(x){
+      x.style.outline = '5px solid black';
+    }
+    function offborder(x){
+      x.style.outline = "0px";
+    }
+    function isologo(x){
+      if (x.style.height == "512px"){
+        x.style.height = "256px";
+        x.style.width = "256px";
+      }
+      else{
+        x.style.height = "512px";
+        x.style.width = "512px";
+      }
+    }
+    function isopelaaja(x){
+      if (x.style.height == "256px"){
+        x.style.height = "128px";
+        x.style.width = "128px";
+      }
+      else{
+        x.style.height = "256px";
+        x.style.width = "256px";
+      }
+    }
+    function Americasbackground(){
+      document.getElementById("Americasflag").style.backgroundImage = "url('Americas/NA.jpg')";
+      var data2 = document.getElementById('AmericasSelect').value;
+      if (data2 == "Cloud9" || data2 == "Complexity" || data2 == "Ghost" || data2 == "Liquid" || data2 == "NRG"){
+        document.getElementById("Americasflag").style.backgroundImage = "url('Americas/NA.jpg')";
+
+      }
+      if (data2 == "MIBR"){
+        document.getElementById("Americasflag").style.backgroundImage = "url('Americas/SA.svg')"
+
+      }
+    }
+    function Asiabackground(){
+      document.getElementById("Asiaflag").style.backgroundImage = "url('Asia/Korea.jpg')";
+      var data2 = document.getElementById('AsiaSelect').value;
+      if (data2 == "MVP PK"){
+        document.getElementById("Asiaflag").style.backgroundImage = "url('Asia/Korea.jpg')";
+
+      }
+      if (data2 == "Tyloo"){
+        document.getElementById("Asiaflag").style.backgroundImage = "url('Asia/China.png')"
+
+      }
+      if (data2 == "Renegades"){
+        document.getElementById("Asiaflag").style.backgroundImage = "url('Asia/Australia.svg')"
+
+      }
+    }
+    function CISsetPicture(){
+      var data = document.getElementById('CISSelect').value;
+      var image = document.getElementById('CISlogo');
+
+      if (data == "AVANGAR"){
+       image.src ="CIS/AVANGAR/AVANGAR.png";
+       var image = document.getElementById('CISpelaaja1');
+       image.src ="CIS/AVANGAR/buster.jpeg";
+       var image = document.getElementById('CISpelaaja2');
+       image.src ="CIS/AVANGAR/fitch.jpeg";
+       var image = document.getElementById('CISpelaaja3');
+       image.src ="CIS/AVANGAR/jame.jpeg";
+       var image = document.getElementById('CISpelaaja4');
+       image.src ="CIS/AVANGAR/KrizzeN.jpeg";
+       var image = document.getElementById('CISpelaaja5');
+       image.src ="CIS/AVANGAR/qikert.jpeg";
+     }
+
+if (data == "Gambit"){
+       image.src ="CIS/Gambit/Gambit.svg";
+       var image = document.getElementById('CISpelaaja1');
+       image.src ="CIS/Gambit/AdreN.jpeg";
+       var image = document.getElementById('CISpelaaja2');
+       image.src ="CIS/Gambit/Dosia.jpeg";
+       var image = document.getElementById('CISpelaaja3');
+       image.src ="CIS/Gambit/hobbit.png";
+       var image = document.getElementById('CISpelaaja4');
+       image.src ="CIS/Gambit/mir.jpeg";
+       var image = document.getElementById('CISpelaaja5');
+       image.src ="CIS/Gambit/mou.jpeg";
+     }
+
+if (data == "HR"){
+       image.src ="CIS/HR/HR.svg";
+       var image = document.getElementById('CISpelaaja1');
+       image.src ="CIS/HR/ANGE1.jpeg";
+       var image = document.getElementById('CISpelaaja2');
+       image.src ="CIS/HR/bondik.jpeg";
+       var image = document.getElementById('CISpelaaja3');
+       image.src ="CIS/HR/DeadFox.jpeg";
+       var image = document.getElementById('CISpelaaja4');
+       image.src ="CIS/HR/ISSAA.jpeg";
+       var image = document.getElementById('CISpelaaja5');
+       image.src ="CIS/HR/woxic.jpeg";
+     }
+
+if (data == "Navi"){
+       image.src ="CIS/Navi/Navi.svg";
+       var image = document.getElementById('CISpelaaja1');
+       image.src ="CIS/Navi/Edward.jpeg";
+       var image = document.getElementById('CISpelaaja2');
+       image.src ="CIS/Navi/electronic.jpeg";
+       var image = document.getElementById('CISpelaaja3');
+       image.src ="CIS/Navi/flamie.jpeg";
+       var image = document.getElementById('CISpelaaja4');
+       image.src ="CIS/Navi/s1mple.jpeg";
+       var image = document.getElementById('CISpelaaja5');
+       image.src ="CIS/Navi/Zeus.jpeg";
+     }
+
+if (data == "Vega Squadron"){
+       image.src ="CIS/Vega Squadron/Vega.svg";
+       var image = document.getElementById('CISpelaaja1');
+       image.src ="CIS/Vega Squadron/chopper.jpeg";
+       var image = document.getElementById('CISpelaaja2');
+       image.src ="CIS/Vega Squadron/crush.jpeg";
+       var image = document.getElementById('CISpelaaja3');
+       image.src ="CIS/Vega Squadron/hutji.jpeg";
+       var image = document.getElementById('CISpelaaja4');
+       image.src ="CIS/Vega Squadron/jR.jpeg";
+       var image = document.getElementById('CISpelaaja5');
+       image.src ="CIS/Vega Squadron/tonyblack.jpeg";
+     }
+    }
+    function AsiasetPicture(){
+      var data = document.getElementById('AsiaSelect').value;
+      var image = document.getElementById('Asialogo');
+      if (data == "MVP PK"){
+        image.src ="Asia/MVP PK/MVP PK.svg";
+        var image = document.getElementById('Asiapelaaja1');
+        image.src ="Asia/MVP PK/glow.jpeg";
+        var image = document.getElementById('Asiapelaaja2');
+        image.src ="Asia/MVP PK/Minixeta.jpeg";
+        var image = document.getElementById('Asiapelaaja3');
+        image.src ="Asia/MVP PK/solo.jpeg";
+        var image = document.getElementById('Asiapelaaja4');
+        image.src ="Asia/MVP PK/Xign.jpeg";
+        var image = document.getElementById('Asiapelaaja5');
+        image.src ="Asia/MVP PK/zeff.jpeg";
+      }
+
+      if (data == "Renegades"){
+        image.src ="Asia/Renegades/Renegades.svg";
+        var image = document.getElementById('Asiapelaaja1');
+        image.src ="Asia/Renegades/AZR.jpeg";
+        var image = document.getElementById('Asiapelaaja2');
+        image.src ="Asia/Renegades/Gratisfaction.jpeg";
+        var image = document.getElementById('Asiapelaaja3');
+        image.src ="Asia/Renegades/jkaem.jpeg";
+        var image = document.getElementById('Asiapelaaja4');
+        image.src ="Asia/Renegades/jks.jpeg";
+        var image = document.getElementById('Asiapelaaja5');
+        image.src ="Asia/Renegades/liazz.jpeg";
+      }
+
+      if (data == "Tyloo"){
+        image.src ="Asia/Tyloo/Tyloo.svg";
+        var image = document.getElementById('Asiapelaaja1');
+        image.src ="Asia/Tyloo/BnTeT.jpeg";
+        var image = document.getElementById('Asiapelaaja2');
+        image.src ="Asia/Tyloo/captainMo.jpeg";
+        var image = document.getElementById('Asiapelaaja3');
+        image.src ="Asia/Tyloo/DD.jpeg";
+        var image = document.getElementById('Asiapelaaja4');
+        image.src ="Asia/Tyloo/somebody.jpeg";
+        var image = document.getElementById('Asiapelaaja5');
+        image.src ="Asia/Tyloo/xccurate.jpeg";
+      }
+    }
+    function AmericassetPicture(){
+      var data = document.getElementById('AmericasSelect').value;
+      var image = document.getElementById('Americaslogo');
+
+      if (data == "Cloud9"){
+        image.src ="Americas/Cloud9/C9.svg";
+        var image = document.getElementById('Americaspelaaja1');
+        image.src ="Americas/Cloud9/Autimatic.jpeg";
+        var image = document.getElementById('Americaspelaaja2');
+        image.src ="Americas/Cloud9/Flusha.jpeg";
+        var image = document.getElementById('Americaspelaaja3');
+        image.src ="Americas/Cloud9/Golden.jpeg";
+        var image = document.getElementById('Americaspelaaja4');
+        image.src ="Americas/Cloud9/Rush.jpeg";
+        var image = document.getElementById('Americaspelaaja5');
+        image.src ="Americas/Cloud9/Skadoodle.jpeg";
+      }
+
+ if (data == "Complexity"){
+        image.src ="Americas/Complexity/Complexity.svg";
+        var image = document.getElementById('Americaspelaaja1');
+        image.src ="Americas/Complexity/ANDROID.jpeg";
+        var image = document.getElementById('Americaspelaaja2');
+        image.src ="Americas/Complexity/dephh.jpeg";
+        var image = document.getElementById('Americaspelaaja3');
+        image.src ="Americas/Complexity/ShahZaM.jpeg";
+        var image = document.getElementById('Americaspelaaja4');
+        image.src ="Americas/Complexity/stanislaw.jpeg";
+        var image = document.getElementById('Americaspelaaja5');
+        image.src ="Americas/Complexity/yay.jpeg";
+      }
+
+ if (data == "Ghost"){
+        image.src ="Americas/Ghost/Ghost.svg";
+        var image = document.getElementById('Americaspelaaja1');
+        image.src ="Americas/Ghost/koosta.jpeg";
+        var image = document.getElementById('Americaspelaaja2');
+        image.src ="Americas/Ghost/Neptune.jpeg";
+        var image = document.getElementById('Americaspelaaja3');
+        image.src ="Americas/Ghost/Steel.jpeg";
+        var image = document.getElementById('Americaspelaaja4');
+        image.src ="Americas/Ghost/Subroza.jpeg";
+        var image = document.getElementById('Americaspelaaja5');
+        image.src ="Americas/Ghost/Wardell.jpeg";
+      }
+
+ if (data == "Liquid"){
+        image.src ="Americas/Liquid/Liquid.svg";
+        var image = document.getElementById('Americaspelaaja1');
+        image.src ="Americas/Liquid/EliGE.jpeg";
+        var image = document.getElementById('Americaspelaaja2');
+        image.src ="Americas/Liquid/NAF.jpeg";
+        var image = document.getElementById('Americaspelaaja3');
+        image.src ="Americas/Liquid/nitr0.jpeg";
+        var image = document.getElementById('Americaspelaaja4');
+        image.src ="Americas/Liquid/TACO.jpeg";
+        var image = document.getElementById('Americaspelaaja5');
+        image.src ="Americas/Liquid/Twistzz.jpeg";
+      }
+
+ if (data == "MIBR"){
+        image.src ="Americas/MIBR/MIBR.svg";
+        var image = document.getElementById('Americaspelaaja1');
+        image.src ="Americas/MIBR/coldzera.jpeg";
+        var image = document.getElementById('Americaspelaaja2');
+        image.src ="Americas/MIBR/FalleN.jpeg";
+        var image = document.getElementById('Americaspelaaja3');
+        image.src ="Americas/MIBR/fer.jpeg";
+        var image = document.getElementById('Americaspelaaja4');
+        image.src ="Americas/MIBR/Stewie2K.jpeg";
+        var image = document.getElementById('Americaspelaaja5');
+        image.src ="Americas/MIBR/tarik.jpeg";
+      }
+
+ if (data == "NRG"){
+        image.src ="Americas/NRG/NRG.svg";
+        var image = document.getElementById('Americaspelaaja1');
+        image.src ="Americas/NRG/Brahze.jpeg";
+        var image = document.getElementById('Americaspelaaja2');
+        image.src ="Americas/NRG/CeRq.jpeg";
+        var image = document.getElementById('Americaspelaaja3');
+        image.src ="Americas/NRG/daps.jpeg";
+        var image = document.getElementById('Americaspelaaja4');
+        image.src ="Americas/NRG/Fugly.jpeg";
+        var image = document.getElementById('Americaspelaaja5');
+        image.src ="Americas/NRG/nahtE.jpeg";
+      }
+
+    }
+
+    function EUsetPicture(){
+      var data = document.getElementById('EUSelect').value;
+      var image = document.getElementById('EUlogo');
+
+      if (data == "AGO"){
+        image.src ="EU/AGO/AGO.png";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/AGO/Furlan.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/AGO/GruBy.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/AGO/phr.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/AGO/SZPERO.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/AGO/TOAO.jpeg";
+
+      }
+
+      if (data == "Astralis"){
+        image.src ="EU/Astralis/Astralis.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/Astralis/device.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/Astralis/dupreeh.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/Astralis/gla1ve.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/Astralis/Magisk.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/Astralis/Xyp9x.jpeg";
+      }
+
+      if (data == "BIG"){
+        image.src ="EU/BIG/BIG.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/BIG/gob b.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/BIG/nex.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/BIG/smooya.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/BIG/tabseN.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/BIG/tiziaN.jpeg";
+      }
+
+      if (data == "ENCE"){
+        image.src ="EU/ENCE/ENCE.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/ENCE/Aerial.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/ENCE/Aleksib.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/ENCE/allu.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/ENCE/sergej.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/ENCE/xseveN.jpeg";
+      }
+
+      if (data == "Faze"){
+        image.src ="EU/Faze/Faze.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/Faze/GuardiaN.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/Faze/karrigan.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/Faze/Niko.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/Faze/olofmeister.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/Faze/rain.jpeg";
+      }
+
+      if (data == "fnatic"){
+        image.src ="EU/fnatic/fnatic.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/fnatic/draken.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/fnatic/JW.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/fnatic/KRIMZ.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/fnatic/twist.png";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/fnatic/Xizt.jpeg";
+      }
+
+      if (data == "G2"){
+        image.src ="EU/G2/G2.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/G2/bodyy.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/G2/Ex6TenZ.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/G2/kennyS.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/G2/shox.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/G2/SmithZz.jpeg";
+      }
+
+      if (data == "Heroic"){
+        image.src ="EU/Heroic/Heroic.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/Heroic/AcilioN.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/Heroic/es3tag.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/Heroic/friberg.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/Heroic/mertz.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/Heroic/MODDII.jpeg";
+      }
+
+      if (data == "Imperial"){
+        image.src ="EU/Imperial/Imperial.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/Imperial/EspiranTo.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/Imperial/hAdji.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/Imperial/nexa.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/Imperial/nukkye.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/Imperial/pounh.jpeg";
+      }
+
+      if (data == "Kinguin"){
+        image.src ="EU/Kinguin/Kinguin.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/Kinguin/MINISE.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/Kinguin/mouz.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/Kinguin/rallen.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/Kinguin/reatz.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/Kinguin/TaZ.jpeg";
+      }
+
+      if (data == "Mouz"){
+        image.src ="EU/Mouz/Mouz.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/Mouz/chrisJ.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/Mouz/oskar.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/Mouz/ropz.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/Mouz/Snax.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/Mouz/suNny.jpeg";
+      }
+
+      if (data == "NIP"){
+        image.src ="EU/NIP/NIP.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/NIP/dennis.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/NIP/f0rest.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/NIP/GeT_RiGhT.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/NIP/Lekr0.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/NIP/REZ.jpeg";
+      }
+
+      if (data == "North"){
+        image.src ="EU/North/North.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/North/aizy.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/North/cadiaN.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/North/gade.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/North/Kjaerbye.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/North/valde.jpeg";
+      }
+
+      if (data == "Optic"){
+        image.src ="EU/Optic/Optic.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/Optic/cajunb.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/Optic/JUGi.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/Optic/k0nfig.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/Optic/niko.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/Optic/Snappi.jpeg";
+      }
+
+      if (data == "SS"){
+        image.src ="EU/SS/SS.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/SS/Calyx.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/SS/MAJ3R.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/SS/ngiN.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/SS/paz.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/SS/XANTARES.jpeg";
+      }
+
+      if (data == "VP"){
+        image.src ="EU/VP/VP.svg";
+        var image = document.getElementById('EUpelaaja1');
+        image.src ="EU/VP/MICHU.jpeg";
+        var image = document.getElementById('EUpelaaja2');
+        image.src ="EU/VP/morelz.jpeg";
+        var image = document.getElementById('EUpelaaja3');
+        image.src ="EU/VP/NEO.jpeg";
+        var image = document.getElementById('EUpelaaja4');
+        image.src ="EU/VP/PashaBiceps.jpeg";
+        var image = document.getElementById('EUpelaaja5');
+        image.src ="EU/VP/snatchie.jpeg";
+      }
+
+    }
     </script>
   </head>
   <body>
-    <select name="EUSelect" id="EUSelect" onchange="">
+    <div class="EUlippu"><br>
+    <select name="EUSelect" id="EUSelect" onchange="EUsetPicture();">
       <option value="AGO">AGO
       <option value="Astralis">Astralis
       <option value="BIG">BIG
@@ -26,34 +570,60 @@
       <option value="Optic">Optic
       <option value="SS">Space Soldiers
       <option value="VP">Virtus.Pro
-    </select>
-    <img src="/EU/Astralis/Astralis.svg" width="512" height="512" title="AGO logo" alt="AGO">
+    </select><br><br>
+    <img src="EU/AGO/AGO.png" width="256" height="256" id="EUlogo" onclick="isologo(this)" onmouseover="EUborder(this)" onmouseout="offborder(this)"><br>
+    <img src="EU/AGO/Furlan.jpeg" width="128" height="128" id="EUpelaaja1" onclick="isopelaaja(this)" onmouseover="EUborder(this)" onmouseout="offborder(this)">
+    <img src="EU/AGO/GruBy.jpeg" width="128" height="128" id="EUpelaaja2" onclick="isopelaaja(this)" onmouseover="EUborder(this)" onmouseout="offborder(this)">
+    <img src="EU/AGO/phr.jpeg" width="128" height="128" id="EUpelaaja3" onclick="isopelaaja(this)" onmouseover="EUborder(this)" onmouseout="offborder(this)">
+    <img src="EU/AGO/SZPERO.jpeg" width="128" height="128" id="EUpelaaja4" onclick="isopelaaja(this)" onmouseover="EUborder(this)" onmouseout="offborder(this)">
+    <img src="EU/AGO/TOAO.jpeg" width="128" height="128" id="EUpelaaja5" onclick="isopelaaja(this)" onmouseover="EUborder(this)" onmouseout="offborder(this)">
     <br><br><br><br>
-    <select name="CISSelect" id="CISSelect" onchange="">
+    </div>
+    <div class="CISlippu"><br>
+    <select name="CISSelect" id="CISSelect" onchange="CISsetPicture();">
       <option value="AVANGAR">AVANGAR
       <option value="Gambit">Gambit
       <option value="HR">HellRaisers
       <option value="Navi">Natus Vincere
       <option value="Vega Squadron">Vega Squadron
-    </select>
-    <img src="Complexity.svg" width="512" height="512" title="astralis logo" alt="Astralis">
+    </select><br><br>
+    <img src="CIS/AVANGAR/AVANGAR.png" width="256" height="256" id="CISlogo" onclick="isologo(this)" onmouseover="CISborder(this)" onmouseout="offborder(this)"><br>
+    <img src="CIS/AVANGAR/buster.jpeg" width="128" height="128" id="CISpelaaja1" onclick="isopelaaja(this)" onmouseover="CISborder(this)" onmouseout="offborder(this)">
+    <img src="CIS/AVANGAR/fitch.jpeg" width="128" height="128" id="CISpelaaja2" onclick="isopelaaja(this)" onmouseover="CISborder(this)" onmouseout="offborder(this)">
+    <img src="CIS/AVANGAR/Jame.jpeg" width="128" height="128" id="CISpelaaja3" onclick="isopelaaja(this)" onmouseover="CISborder(this)" onmouseout="offborder(this)">
+    <img src="CIS/AVANGAR/KrizzeN.jpeg" width="128" height="128" id="CISpelaaja4" onclick="isopelaaja(this)" onmouseover="CISborder(this)" onmouseout="offborder(this)">
+    <img src="CIS/AVANGAR/qikert.jpeg" width="128" height="128" id="CISpelaaja5" onclick="isopelaaja(this)" onmouseover="CISborder(this)" onmouseout="offborder(this)">
     <br><br><br><br>
-    <select name="AmericasSelect" id="AmericasSelect" onchange="">
+  </div>
+  <div class="Americaslippu" id="Americasflag"><br>
+    <select name="AmericasSelect" id="AmericasSelect" onchange="AmericassetPicture(); Americasbackground();">
       <option value="Cloud9">Cloud9
       <option value="Complexity">Complexity
       <option value="Ghost">Ghost
       <option value="Liquid">Liquid
       <option value="MIBR">MIBR
       <option value="NRG">NRG
-    </select>
-    <img src="Complexity.svg" width="512" height="512" title="astralis logo" alt="Astralis">
+    </select><br><br>
+    <img src="Americas/Cloud9/C9.svg" width="256" height="256" id="Americaslogo" onclick="isologo(this)" onmouseover="Americasborder(this)" onmouseout="offborder(this)"><br>
+    <img src="Americas/Cloud9/Autimatic.jpeg" width="128" height="128" id="Americaspelaaja1" onclick="isopelaaja(this)" onmouseover="Americasborder(this)" onmouseout="offborder(this)">
+    <img src="Americas/Cloud9/Flusha.jpeg" width="128" height="128" id="Americaspelaaja2" onclick="isopelaaja(this)" onmouseover="Americasborder(this)" onmouseout="offborder(this)">
+    <img src="Americas/Cloud9/Golden.jpeg" width="128" height="128" id="Americaspelaaja3" onclick="isopelaaja(this)" onmouseover="Americasborder(this)" onmouseout="offborder(this)">
+    <img src="Americas/Cloud9/Rush.jpeg" width="128" height="128" id="Americaspelaaja4" onclick="isopelaaja(this)" onmouseover="Americasborder(this)" onmouseout="offborder(this)">
+    <img src="Americas/Cloud9/Skadoodle.jpeg" width="128" height="128" id="Americaspelaaja5" onclick="isopelaaja(this)" onmouseover="Americasborder(this)" onmouseout="offborder(this)">
     <br><br><br><br>
-    <select name="AsiaSelect" id="AsiaSelect" onchange="">
+  </div>
+  <div class="Asialippu" id="Asiaflag"><br>
+    <select name="AsiaSelect" id="AsiaSelect" onchange="AsiasetPicture(); Asiabackground();">
       <option value="MVP PK">MVP PK
       <option value="Renegades">Renegades
       <option value="Tyloo">Tyloo
-    </select>
-
-      <img src="Complexity.svg" width="512" height="512" title="astralis logo" alt="Astralis">
+    </select><br><br>
+      <img src="Asia/MVP PK/MVP PK.svg" width="256" height="256" id="Asialogo" onclick="isologo(this)" onmouseover="Asiaborder(this)" onmouseout="offborder(this)"><br>
+      <img src="Asia/MVP PK/glow.jpeg" width="128" height="128" id="Asiapelaaja1" onclick="isopelaaja(this)" onmouseover="Asiaborder(this)" onmouseout="offborder(this)">
+      <img src="Asia/MVP PK/Minixeta.jpeg" width="128" height="128" id="Asiapelaaja2" onclick="isopelaaja(this)" onmouseover="Asiaborder(this)" onmouseout="offborder(this)">
+      <img src="Asia/MVP PK/solo.jpeg" width="128" height="128" id="Asiapelaaja3" onclick="isopelaaja(this)" onmouseover="Asiaborder(this)" onmouseout="offborder(this)">
+      <img src="Asia/MVP PK/XigN.jpeg" width="128" height="128" id="Asiapelaaja4" onclick="isopelaaja(this)" onmouseover="Asiaborder(this)" onmouseout="offborder(this)">
+      <img src="Asia/MVP PK/zeff.jpeg" width="128" height="128" id="Asiapelaaja5" onclick="isopelaaja(this)" onmouseover="Asiaborder(this)" onmouseout="offborder(this)">
+    <br><br><br><br><br><br><br></div>
   </body>
 </html>
